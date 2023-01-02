@@ -6,7 +6,7 @@ const App = () => {
             <nav className="relative container mx-auto p-6">
                 <div className="flex items-center justify-between">
                     <div className="pt-2">
-                        <img src="" alt="Logo"/>
+                        <img src="./img/logo.svg" alt="Logo"/>
                     </div>
                     <div className="hidden md:flex space-x-6">
                         <a href="#" className={"hover:text-darkGrayishBlue"}>Pricing</a>
