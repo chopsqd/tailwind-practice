@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const App = () => {
+    const [menu, setMenu] = useState(false)
+
     return (
         <div>
             <nav className="relative container mx-auto p-6">
@@ -16,8 +18,25 @@ const App = () => {
                         <a href="#" className={"hover:text-darkGrayishBlue"}>Community</a>
                     </div>
                     <a href="#"
-                       className="hidden md:block  p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">Get
-                        Started</a>
+                       className="hidden md:block  p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+                        Get Started
+                    </a>
+
+                    <button className={`${menu ? 'open' : ''} block hamburger md:hidden focus:outline-none`} onClick={() => setMenu(prev => !prev)}>
+                        <span className="hamburger-top"></span>
+                        <span className="hamburger-middle"></span>
+                        <span className="hamburger-bottom"></span>
+                    </button>
+                </div>
+
+                <div className="md:hidden">
+                    <div className={`${menu ? 'flex' : 'hidden'} absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md`}>
+                        <a href="#">Pricing</a>
+                        <a href="#">Product</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Community</a>
+                    </div>
                 </div>
             </nav>
 
